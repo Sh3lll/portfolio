@@ -1,0 +1,66 @@
+
+
+Fonts
+
+----------------------------------------------
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&family=Pacifico&family=Source+Sans+Pro:wght@400;600;700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+----------------------------------------------
+
+
+Skills
+----------------------------------------------
+I love to create simple, minimal and sleek designs. 
+
+
+
+
+
+
+SKILLS
+
+While I'm not restricted to any tech stack, my tools of choice are:
+
+Front-end: HTML, CSS, SCSS, Javascript, React.js, Next.js, Typescript (kinda), Bootstrap, Material UI,
+            AntD
+Back-end: Firebase, Node.js
+Databases: PostgreSQL, MySQL
+Other: Git, Gitlab, Github, Chrome Dev Tools, Debugging, Swagger UI, VScode
+
+
+
+
+----------------------------------------------
+
+About Text
+
+----------------------------------------------
+I am a Frontend Developer highly effective at developing and standardizing designs according
+to company brand and objectives. I enjoy exploring the world of tech, learning and trying to keep up 
+with evolving trends.
+
+When I'm not buried in code and an EDM playlist, I like taking walks, yoga, catching up on some Netflix and whipping up a nice meal. 
+
+
+----------------------------------------------
+
+
+Theme
+----------------------------------------------
+    body:"#FCF6F4",
+    text:"#000000",
+    fontFamily:"'Source Sans Pro', sans-serif",
+    bodyRgba : "252, 246, 244",
+    textRgba:"0,0,0",
+
+
+----------------------------------------------
+
+
+
+
+
+
