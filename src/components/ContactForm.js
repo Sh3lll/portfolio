@@ -1,55 +1,26 @@
 import React from 'react'
-import { Form, Row, Col, Input, Button} from 'antd'
+
+import emailjs from "emailjs-com"
+
 import styled from 'styled-components'
 import { darkTheme } from '../components/Themes'
 import GlobalStyle from "../globalStyles"
 import contact from '../assets/svg/contact.svg'
-import submit from '../assets/Images/submit.png'
-
-const Power = styled.div`
-position: fixed;
-top: 1rem;
-left: 50%;
-transform: translate(-50%, 0);
-background-color: #FCF6F4;
-padding: 0.1rem;
-// border-radius: 50%;
-// border: 1px solid #000;
-// width: 6.5rem;
-// height: 6.5rem;
-
-display: flex;
-justify-content: center;
-align-items:center;
-z-index:3;
-cursor: pointer;
-&:hover{
-    background-color: rgba(0,255,0,0.4);
-    box-shadow: 0 0 8px 6px rgba(0,255,0,0.2);
-}
-&>*:first-child{
-    text-decoration: none;
-    color: inherit;
-}
+import button from '../assets/svg/button.svg'
+import { Row, Form, Input, Button, Col, message} from 'antd'
+import FormItem from 'antd/lib/form/FormItem'
 
 
-img{
-    width: 8.5rem;
-    height: 8.5rem;
-    background-color: #RTJDY3;
-}
-`
 
 const FormStyle = styled.div`
-margin: 5rem 50rem;
+margin: 5rem 0rem;
 
 
 
 `
 
-
-const ContactIcon = styled.div`
-
+const SubmitIcon = styled.div`
+background: ${props => props.theme.body};
 display: flex;
 position: top;
 flex-direction: column;
@@ -63,29 +34,69 @@ z-index:3;
 }
 
 
+
+
+`
+
+
+const ContactIcon = styled.div`
+background: ${props => props.theme.body};
+display: flex;
+position: top;
+flex-direction: column;
+align-items: center;
+transform: translate(20%, 0);
+
+bottom: 0;
+left: 2rem;
+z-index:3;
+&>*:not(:last-child){
+    margin: 0.5rem 0;
+}
+
+
+
+
 `
 
 const Contact = styled.div`
 background: ${props => props.theme.body};
 width: 100vw;
 height: 100vh;
-overflow:hidden;
-position: relative;
+display: inline;
+flex-direction: column;
 align-items: center;
 position: fixed;
-left: 50%;
-transform: translate(-50%, 0);
-padding: 0.1rem;
+bottom: 0;
+left: 0rem;
 
-
-img{
-    width: 15rem;
-    height: 15rem;
-    background-color: #RTJDY3;
+z-index:3;
+&>*:not(:last-child){
+    margin: 0.5rem 0;
 }
-`
+
+ `
+
+
+
+
+
 
 const ContactForm = () => {
+
+  
+
+    function sendEmail (e)  {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_amtcr3o', 'template_d6nrts6', e.target, 'c4nZ-rp11sS2rsqzj')
+          .then((result) => {
+              console.log(result.text);
+              message.success('Message sent :)');
+          }, (error) => {
+              console.log(error.text);
+          });
+      };
   return (
 
   
@@ -94,101 +105,78 @@ const ContactForm = () => {
 
     <Contact>
 
+<div className='row'>
+    <div className='column'>
+   
+        <p>
+            I'm always interested in hearing about
+ new projects. If you'd like to chat 
+please get in touch.
+        </p>
+    </div>
+    <div className='column'>
 
-    
-<div>
-        <ContactIcon>
-        <img src={contact} alt="contact"  />
+
+    <ContactIcon>
+        <img src={contact} alt="contact" width={'150rem'} height={'150rem'}  />
         </ContactIcon>
-        
-          
-        </div>
+
     
-<div>
-
-<FormStyle>
-<div>
+        <form   
     
-    <Form>
+    onSubmit={sendEmail}>
+        <Row>
+        <label> Name </label>  
+        <input style={{width: '30%', padding: '5px 5px', margin: '8px 0', }} type="string" name="name"></input>
+        </Row>
 
-        <Form.Item
-                        name="name"
-                        label="Name"
-                        hasFeedback
-                        rules={[{ 
-                            required: false, 
-                            
-                        }]}
-                        >
-                        <Input />
-            </Form.Item>
-
-            <Form.Item
-                        name="email"
-                        label="Email"
-                        hasFeedback
-                        rules={[{ 
-                            required: false, 
-                            
-                        }]}
-                        >
-                        <Input type={'email'} />
-            </Form.Item>
-
-            <Form.Item
-                        name="message"
-                        label="Message"
-                        hasFeedback
-                        rules={[{ 
-                            required: false, 
-                            
-                        }]}
-                        >
-                        <Input.TextArea 
-                        rows={6}
-                        showCount maxLength={100} />
-            </Form.Item>
+        <Row>
+        <label> Email </label>  
+        <input style={{width: '30%', padding: '5px 5px', margin: '8px 0', }} type="email" name="email"></input>
+            </Row>
 
             <Row>
-            <Power>
+            <label> Message </label>  
+        <textarea style={{width: '30%', padding: '5px 5px', margin: '8px 0', }} name="message" rows='6'/>
+            </Row>
 
+            <Row>
+            
+            </Row>
+      
            
 
-                <img src={submit} alt="submit" />
-           
-
-
-
-
-
-            </Power>
-                </Row>
-
-    </Form>
-
-    <form>
-
+        <input  style={{ 
+        fontSize: '20px', color: '#FFFFFF',background:'#D61111', lineHeight: '40px', width: '120px', 
+        borderRadius: '40px', border: '1px '}}
      
-
-
-        
+           type='submit' value='Submit'/>
     </form>
-
-  
-    
-
+        
+        
     </div>
-
-
-</FormStyle>
-
-<h1> ContactForm </h1>
-
+</div>
     
+<div>
+       
+          
+        </div>
+
+      
+
+   
+    
+<div>
+
+
+
+ 
 
   
 
 </div>
+
+ 
     </Contact>
     
   )

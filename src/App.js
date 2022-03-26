@@ -4,6 +4,10 @@ import {lightTheme, darkTheme} from "./components/Themes"
 import { Route, Switch } from "react-router-dom"
 
 
+import 'antd/dist/antd.css'
+import '@ant-design/icons'
+
+
 // Components
 import Main from "./components/Main";
 import AboutPage from "./components/AboutPage";
