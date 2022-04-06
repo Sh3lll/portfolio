@@ -25,9 +25,16 @@ const Container = styled.div`
 padding: 2rem;
 
 `
+const BLOG = styled(NavLink)`
+color: ${props => props.theme.text};
+position: absolute;
+top: 50%;
+right: calc(1rem + 2vw);
 
+text-decoration: none;
+z-index:1;
+`
 const WORK = styled(NavLink)`
-
 color: ${props => props.click ? props.theme.body : props.theme.text};
 position: absolute;
 top: 50%;
@@ -37,16 +44,6 @@ text-decoration: none;
 z-index:1;
 `
 
-const BLOG = styled(NavLink)`
-
-color: ${props => props.theme.text};
-position: absolute;
-top: 50%;
-right: calc(1rem + 2vw);
-
-text-decoration: none;
-z-index:1;
-`
 
 const Contact =styled(NavLink)`
 
@@ -71,8 +68,10 @@ justify-content: space-evenly;
 `
 
 
+
+
 const ABOUT = styled(NavLink)`
-color: ${props => props.click ? props.theme.body : props.theme.text};
+color:  ${props => props.theme.text};
 text-decoration: none;
 z-index:1;
 `
@@ -81,6 +80,26 @@ const SKILLS = styled(NavLink)`
 color: ${props => props.theme.text};
 text-decoration: none;
 z-index:1;
+`
+
+const Center = styled.button`
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+border: none;
+outline: none;
+background-color: transparent;
+cursor: pointer;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+
+&>::last-child{
+    padding-top: 1rem;
+   }
 `
 
 
@@ -97,13 +116,18 @@ const Main = () => {
 
             <SocialIcons/>
 
+            {/* <Center>
+              <YinYang width={150} height={150} fill='curreColor'/>
+                <span>Click Here</span>
+            </Center> */}
+
 
            
              
             <Contact to="/contact">
                  
             <h4>
-              Talk to me:)
+              Talk to me
             </h4>                
               
               </Contact>

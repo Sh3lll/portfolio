@@ -15,6 +15,7 @@ import BlogPage from "./components/BlogPage";
 import WorkPage from "./components/WorkPage";
 import MySkillsPage from "./components/MySkillsPage";
 import ContactForm from "./components/ContactForm";
+import SoundBar from "./subcomponents/SoundBar";
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
 <GlobalStyle/>
 
   <ThemeProvider theme={lightTheme}>
+
+  <SoundBar />
     
     <Switch>
 
