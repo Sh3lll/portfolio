@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import WelcomeComponent from '../subcomponents/WelcomeComponent'
@@ -125,36 +126,100 @@ const Main = () => {
            
              
             <Contact to="/contact">
-                 
-            <h4>
-              Talk to me
-            </h4>                
+            <motion.h4
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                
+                >
+                    Talk to me..
+                </motion.h4>
+
               
               </Contact>
 
-              <BLOG  to="/blog">          
-                 <h4>
-              Blog
-              </h4>
+              <BLOG  to="/blog">  
+              <motion.h4
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                
+                >
+                   Blog
+                </motion.h4>        
+              
                     </BLOG>
 
-              <WORK  to="/work">          
-                 <h4>
-                Work
-              </h4>
+              <WORK  to="/work">   
+              <motion.h4
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                
+                >
+                    Work
+                </motion.h4>       
+               
                     </WORK>
 
               <BottomBar>
                 <ABOUT to="/about">
-                    <h4>
-                      About Me
-                    </h4>
+                <motion.h4
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                
+                >
+                   About Me..
+                </motion.h4>
+                   
                   
                 </ABOUT>
                 <SKILLS to="/skills">
-                    <h4>
-                      My Skills
-                    </h4>
+                <motion.h4
+                initial={{
+                    y:-200,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                animate={{
+                    y:0,
+                    transition: { type:'spring', duration: 1.5, delay:1}
+                }}
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                
+                >
+                    My Skills
+                </motion.h4>
+                 
                   
                 </SKILLS>
               </BottomBar>
