@@ -3,12 +3,41 @@ import styled, { keyframes, ThemeProvider } from 'styled-components'
 import {darkTheme} from './Themes';
 
 
-// import WelcomeComponent from '../subcomponents/WelcomeComponent';
-//import SocialIcons from '../subcomponents/SocialIcons';
-import PowerButton from '../subcomponents/PowerButton';
+
 import ParticleComponent from '../subcomponents/ParticleComponent';
+import { NavLink } from 'react-router-dom'
+import homesvg from '../assets/Images/homesvg.svg'
 import BigTitle from '../subcomponents/BigTitle'
-import me from '../assets/Images/me.png'
+import me from '../assets/Images/me3.png'
+
+
+
+const Power = styled.div`
+position: absolute;
+top: 10%;
+left: 50%;
+transform: translate(-50%,-50%);
+border: none;
+outline: none;
+background-color: transparent;
+cursor: pointer;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+&:hover{
+    background-color: rgba(0,255,0,0.4);
+    box-shadow: 0 0 8px 6px rgba(0,255,0,0.2);
+}
+
+
+&>::last-child{
+    padding-top: 1rem;
+   }
+`
+
+
 
 const Box = styled.div`
 background-color: ${props => props.theme.text};
@@ -23,14 +52,15 @@ const float = keyframes`
 100% { transform: translateY(-10px) }
 `
 const Spaceman = styled.div`
-position: absolute;
-top: 10%;
+position: fixed;
+top: 1%;
 right: 5%;
-width: 20vw;
-animation: ${float} 4s ease infinite;
+width: 30vw;
+height: 45vw;
+//animation: ${float} 4s ease infinite;
 img{
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 `
 const Main =  styled.div`
@@ -61,15 +91,26 @@ const Main =  styled.div`
 const AboutPage = () => {
     return (
         <ThemeProvider theme={darkTheme}>
+
+
+
 <Box>
 
 
-<PowerButton />
-<ParticleComponent theme='dark' />
+<Power>
+    <NavLink to="/">
+                <img width={70} height={70} src={homesvg} alt="home" />
+            </NavLink>
+    
+    </Power>
 
+
+
+<ParticleComponent theme='dark' />
+{/* 
         <Spaceman>
             <img src={me} alt="me" />
-        </Spaceman>    
+        </Spaceman>     */}
         <Main>
        The name is Wanjiru. Mercy Wanjiru.
 
